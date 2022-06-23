@@ -1,7 +1,6 @@
 {
   "name": "eletricista",
   "version": "0.0.0",
-  "homepage": "Eletricista",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
