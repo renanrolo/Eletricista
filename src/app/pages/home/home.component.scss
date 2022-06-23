@@ -1,0 +1,16 @@
+.home__card__link {
+    text-decoration: none;
+
+    :hover {
+        color: #fff;
+        background-color: #3f51b5;
+    }
+
+    :hover * {
+        color: #fff;
+    }
+}
+
+.home__card__container {
+    width: 280px;
+}

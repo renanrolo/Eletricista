@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from 'src/shared/shared.module';
 import { FiosComponent } from './pages/fios/fios.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FiosComponent,
+    HomeComponent,
     HeaderComponent
   ],
   imports: [
