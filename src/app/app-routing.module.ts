@@ -18,6 +18,7 @@ export class AppRoutingModule {
     let path = localStorage.getItem('path');
     if (path) {
       localStorage.removeItem('path');
+      path = path.replace('/Eletricista', '')
       this.router.navigate([path]);
     }
   }
