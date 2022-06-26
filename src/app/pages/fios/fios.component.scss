@@ -11,8 +11,12 @@ $primary: mat-color($app-primary);
 $accent: mat-color($app-accent);
 $warn: mat-color($app-warn);
 
-.demo-table {
+.fios-table {
     width: 100%;
+    * {
+        text-align: center;
+        padding-left: 0 !important; //reset
+    }
 }
 
 .mat-row .mat-cell {
@@ -25,12 +29,17 @@ $warn: mat-color($app-warn);
     border-color: currentColor;
 }
 
-.demo-row-is-clicked {
+.fios-row-is-clicked {
     font-weight: bold;
     background-color: $primary;
     color: $accent;
 }
 
-.demo-row-is-clicked > td {
+.fios-row-is-clicked > td {
     color: #fff;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+     border: 1px solid rgba(0, 0, 0, .12);
 }

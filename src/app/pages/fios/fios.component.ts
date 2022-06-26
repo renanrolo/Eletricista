@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tabela_Fios_Cobre } from './models/fios-espessura-tabela';
 
 const _dataSource: IFioRow[] = [
   { corrente: 1, d10: 1.5, d20: 1.5, d30: 1.5, d40: 1.5, d50: 1.5 },
@@ -37,65 +38,12 @@ export class FiosComponent implements OnInit {
     this.voltagem = true;
   }
 
-  displayedColumns: string[] = ['corrente', 'd10', 'd20', 'd30', 'd40', 'd50',];
-  dataSource = _dataSource;
+  displayedColumns: string[] = ['espessura', 'a1_2', 'a1_3', 'b1_2', 'b1_3'];
+  dataSource = Tabela_Fios_Cobre;
   clickedRows = new Set<IFioRow>();
   amperes: number = 0;
   voltagem: boolean = true;
   watts: string = "";
-
-  onclickedRows(row: IFioRow): void {
-    if (this.clickedRows.has(row)) {
-      this.clickedRows.delete(row);
-    }
-    else {
-      this.clickedRows.add(row);
-    }
-  }
-
-  onVoltagemToggle(): void {
-    this.calculate();
-  }
-
-  search(input: string): void {
-    this.watts = input;
-    this.calculate();
-  }
-
-  calculate(): void {
-    this.clickedRows.clear();
-
-    const number = Number(this.watts);
-
-    if (!(number > 0)) {
-      this.amperes = 0;
-      return;
-    }
-
-    this.amperes = this.roundUp(number / this.getVoltage(), 2);
-
-    if (this.amperes > 0) {
-      for (let index = 0; index < (this.dataSource.length - 1); index++) {
-        const row = this.dataSource[index];
-        const nextRow = this.dataSource[index + 1];
-        if (row.corrente <= this.amperes && this.amperes < nextRow.corrente) {
-          this.clickedRows.add(row);
-        }
-      }
-    }
-  }
-
-  getVoltage(): number {
-    if (this.voltagem === true) {
-      return 127;
-    }
-    return 220;
-  }
-
-  roundUp(num: number, precision: number): number {
-    precision = Math.pow(10, precision);
-    return Math.ceil(num * precision) / precision;
-  }
 }
 
 export interface IFioRow {
