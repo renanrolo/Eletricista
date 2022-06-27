@@ -1,0 +1,18 @@
+<form class="calc-amp-form">
+    <div>
+        <label>Voltagem</label>
+        <mat-radio-group name="voltagem" [(ngModel)]="voltagem" (change)="onVoltagemToggle()">
+            <mat-radio-button [checked]="true" [value]="true">127v</mat-radio-button>
+            <mat-radio-button [value]="false">220v</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Watts</mat-label>
+        <input mask="000000" matInput placeholder="1500" (keyup)="onChangeWatts(watts.value)" #watts />
+    </mat-form-field>
+
+    <br />
+    
+    <p>{{getAmperesText}}</p>
+</form>

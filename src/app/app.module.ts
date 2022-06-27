@@ -8,13 +8,15 @@ import { SharedModule } from 'src/shared/shared.module';
 import { FiosComponent } from './pages/fios/fios.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CalcAmpComponent } from './pages/calc-amp/calc-amp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FiosComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    CalcAmpComponent
   ],
   imports: [
     BrowserModule,
