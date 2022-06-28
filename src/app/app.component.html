@@ -1,11 +1,17 @@
 <mat-sidenav-container>
   <mat-sidenav-content>
-    <div style="height: 88vh;">
+    
+    <div class="app-container">
+
       <app-header></app-header>
+
       <main>
         <router-outlet></router-outlet>
       </main>
 
+      <app-footer id="app-footer"></app-footer>
+      
     </div>
+
   </mat-sidenav-content>
 </mat-sidenav-container>

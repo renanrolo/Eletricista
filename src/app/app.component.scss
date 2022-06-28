@@ -10,4 +10,20 @@ mat-sidenav {
 
 main {
     padding: 10px;
+    padding-bottom: 80px;
+}
+
+.app-container {
+    min-height: 100vh;
+    position: relative;
+}
+
+#app-footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    // background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
